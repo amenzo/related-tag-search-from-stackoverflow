@@ -29,7 +29,7 @@ def clean_tags(tag_list, cleaned_tags_list):
             temp_list.append(tag.replace('"','').replace('[','').replace(']',''))
         cleaned_tags_list.append(temp_list)
 
-for page in range(1,2):
+for page in range(1,11):
     url='https://api.stackexchange.com/2.2/questions?page='+str(page)+'&pagesize=100&order=desc&sort=activity&site=stackoverflow'
     getTags(url,cleaned_tags_list)
 #print(cleaned_tags_list)
@@ -64,6 +64,6 @@ edges=serialized_graph['links']
 
 #save the nodes to nodes.txt and the edges to edges.txt
 with open('nodes.txt','w') as outfile:
-    json.dump(edges,outfile)
+    json.dump(nodes,outfile)
 with open('edges.txt','w') as outfile:
     json.dump(edges,outfile)

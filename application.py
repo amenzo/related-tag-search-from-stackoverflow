@@ -22,12 +22,12 @@ def related_tags(edges_list,tag):
             temp.append(edge['source'])
             temp.append(edge['weight'])
             tag_weight.append(temp)
-        sorted_weight_tag=sorted(tag_weight, key=lambda x:x[1], reverse=True) #sorting the weight in descending order
-        top_related_tags_list=[x[0] for x in sorted_weight_tag] #getting the realted tags based on the weights
-        if len(top_related_tags_list)< max_related_tags:
-            return top_related_tags_list
-        else:
-            return top_related_tags_list[:max_related_tags]
+    sorted_weight_tag=sorted(tag_weight, key=lambda x:x[1], reverse=True) #sorting the weight in descending order
+    top_related_tags_list=[x[0] for x in sorted_weight_tag] #getting the realted tags based on the weights
+    if len(top_related_tags_list)< max_related_tags:
+        return top_related_tags_list
+    else:
+        return top_related_tags_list[:max_related_tags]
 
 @app.route('/',methods=['GET','POST'])
 def main():

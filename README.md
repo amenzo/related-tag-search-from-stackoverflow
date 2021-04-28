@@ -9,3 +9,7 @@ To complete this task, we have to follow some steps
 2. Then we create weighted graph using the tags obtained from step one
 
 3. on this step, the graph is serialized into a json dictionary.Nodes and edges and stored a nodes.txt and edges.txt files
+
+4. use the saved text files to get all edges for a give tag and sorted based on its weight.
+
+5. Implement flask app to get the result from step 4 and display them in to a wep-page  
