@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>related tag search</title>
+</head>
+<body>
+<div id = "first">
+<form name="form" action="{{url_for('main')}}"  method="post" >
+ <h2 align="center">Stackoverflow related tags search</h2>
+ <h4>Please enter the tag</h4>
+ <label class = "one">
+        <span>Tag :</span>&nbsp;
+        <input name="Tag" type="text" required>
+    </label>
+        <br>
+        <input type="submit" value="Get related tags">
+</form>
+<div class="result" >
+    {% if result %}
+        {% for variable, value in original_input.items() %}
+           <b>{{ variable }}</b> : {{ value }}
+        {% endfor %}
+        <p style="font-size:20px" >Related Tags :</p>
+
+         {% for variable in result %}
+            <p style="font-size:15px" align="center">{{ variable }}</p>
+         {% endfor %}
+         {% endif %}
+</div>
+</div>
+</body>
+</html>
